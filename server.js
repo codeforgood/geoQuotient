@@ -11,7 +11,7 @@ app.configure(function () {
 app.get('/', function(request, response) {
   response.send('Welcome to GeoQuotient! How good is your GeoQuotient?');
 });
-/*app.get('/places', places.findAll);*/
+app.get('/places', places.findAll);
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
