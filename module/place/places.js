@@ -8,15 +8,14 @@ var server = mongo.Server,
   process.env.MONGOHQ_URL || 
   'mongodb://ds043917.mongolab.com:43917/geoquotient';*/
 
-var mongoUri = process.env.MONGOLAB_URI || 
-  process.env.MONGOHQ_URL || 
-  'mongodb://localhost/geoquotient'; 
+var mongoUri = process.env.MONGOLAB_URI ||
+  'mongodb://heroku_app9665789:jbcsk18vavbost20eh95bbf6qs@ds043987.mongolab.com:43987/heroku_app9665789'; 
 
 console.log("mongoURI: " + mongoUri);
 
 db.connect(mongoUri, function (err, db) {
     if(!err) {
-        console.log("Connected to 'geoQuotient' database");
+        console.log("Connected to 'heroku_app9665789' database");
 
         db.collection('places', {safe:true}, function(err, collection) {
             if (err) {
@@ -29,6 +28,6 @@ db.connect(mongoUri, function (err, db) {
             });
         });
     }else{
-        console.log("Failed to Connect to 'geoQuotient' database");
+        console.log("Failed to Connect to 'heroku_app9665789' database");
     }
 });
